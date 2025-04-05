@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 // Ordena um vetor de inteiros em ordem crescente
 int vec_order_cresc(int vec[], int n) {
     // Definiremos a função que irá iterar os itens do vetor, de forma a ordená-los em ordem crescente
@@ -13,8 +15,22 @@ int vec_order_cresc(int vec[], int n) {
     
                     vec[j] = vec[j+1];
                     
-                    vec[j+1] = temp;    
+                    vec[j+1] = temp;
                 }
             }
         }
     }
+
+int main() {
+    int Exp1[10];
+
+    for (int i = 0; i < 10; i++) {
+        scanf("%d", &Exp1[i]);
+    }
+
+    vec_order_cresc(Exp1, 10);
+
+    printf("%d", Exp1[0]+Exp1[9]);
+
+    return 0;
+}

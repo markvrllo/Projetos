@@ -328,14 +328,14 @@ Sejam $\vec{u}, \vec{v}$ e $\vec{w}, $vetores e $\lambda$ um escalar
 $$\|v\| = \sqrt{x^2 + y^2} = \sqrt{\vec{v}\cdot\vec{v}}$$, sendo x e y as coordenadas do vetor, considerando a distância do ponto P e a origem.
 
 A **norma euclideana** de um vetor $\vec{v}$ no $\mathbb{R^n}$ é \[
-\|v\| = \sqrt{\vec{v}\cdot\vec{v}} 
+\|v\|_2 = \sqrt{\vec{v}\cdot\vec{v}}  = \sqrt{v_1^2 +v_2^2 + ... + v_n^2}
 \]
 
 
 #### Propriedades
 
 \[
-\|\vec{u}\| = \vec{0} \iff \vec{u} = \vec{0}\\
+\|\vec{u}\|_2 = \vec{0} \iff \vec{u} = \vec{0}\\
 \|\lambda\vec{u}\| = |\lambda|\|\vec{u\|}
 \]
 
@@ -375,3 +375,139 @@ Seja $\vec{u}, \vec{v}$ vetores em $\mathbb{R^n}$:
 \]
 
 > Prove:
+
+
+## Aula 4
+
+Prosseguindo, vamos definir, em geral uma norma em $\mathbb{R^n}$ é uma função $\|\cdot\| = \mathbb{R^n} \rightarrow \mathbb{R^n}$ satisfazendo:
+
+\[
+(i): \|u\| \geq 0 \text{ e } \|u\| = 0 \iff u = 0\\
+(ii):\|\lambda u\| = |\lambda|\cdot \|u\|\\
+(iii): \|u+v\| \geq \|u\| + \|v\|
+\]
+
+$\|\cdot\|_2 \text{ é somente UMA norma}.$
+
+Exemplo: 
+
+\[u = [u_1, u_2, ..., u_n]\\
+    \|u\|_\infty = max\{|u_1|, |u_2|, ...,|u_n|\}\\
+    \text{norma } l_\infty\]
+
+\[u = [u_1, u_2, ..., u_n]\\
+    \|u\|_1 = |u_1| + |u_2| + ... + |u_n|\\
+    =\sum_{i=1}^{n}|u_i|\\
+    \text{norma } l_1\]
+
+
+Com a desigualdade abaixo como verdadeira:
+
+\[
+\|u\|_1 \geq \|u\|_2 \geq \|u\|_\infty
+\]
+
+Exemplo:
+
+$$p>1, \text{sendo p um número real. }\\
+u=[u_1, u_2,...,u_n]\\
+ \\
+  \\
+   \\
+    \\
+\|u\|_p = (|u_1|^p+|u_2|^p+...+|u_n|^p)^{\frac{1}{p}}\\\text{norma } l_p$$
+
+### Desigualdade de Holder
+
+$u=[u_1, u_2, ..., u_n],\\ v=[v_1, v_2, ..., v_n], \\ p>1,$
+
+\[
+|u\cdot v| \leq \|u\|_p\|v\|_q\\
+\text{ }\\
+\text{com } \dfrac{1}{p} + \dfrac{1}{q} = 1\\
+\]
+
+Explicitamente, teremos:
+
+\[|\sum_{i=1}^{n}{u_i \cdot v_i}| \leq (\sum_{i=1}^{n}{|u_i|^p})^\dfrac{1}{p}(\sum_{i=1}^{n}{|v_i|^p})^\dfrac{1}{q} \]
+
+### Desigualdade de Minkowski
+
+\[\|u+v\| \leq \|u\|_p + \|v\|_q\]
+
+#### Prova
+
+$u=[u_1, u_2, ..., u_n],\\ v=[v_1, v_2, ..., v_n]$
+
+Teremos que:
+
+\[
+\|u+v\|_p = (|u_1+v_1|^p + |u_2+v_2|^p + ... + |u_n+v_n|^p)^\dfrac{1}{p}\\
+\]
+
+Elevando ambos os lados por p, teremos:
+
+\[
+\begin{aligned}
+    (\|u+v\|_p)^p &= \sum_{i=1}^{n}{|u_i+v_i|^p}\\
+    &= \sum_{i=1}^{n}{|u_i+v_i|^{p-1}}\cdot |u_i+v_i|\\
+    &\leq \sum_{i=1}^{n}{|u_i+v_i|^{p-1}}\cdot (|u_i|+|v_i|)\\
+    &=\sum_{i=1}^{n}{|u_i+v_i|^{p-1}}\cdot (|u_i|) + \sum_{i=1}^{n}{|u_i+v_i|^{p-1}}\cdot (|v_i|)
+\end{aligned}
+\]
+
+Agora, sejam $w_i = |u_i+v_i|^{p-1}$ e $z_i = |u_i|$
+
+Reescrevendo, teremos que:
+
+\[
+|\sum_{i=1}^{n}{w_iz_i}| = |\sum_{i=1}^{n}{z_iw_i}| \\
+\leq (\sum_{i=1}^{n}{|z_i|^p})^\frac{1}{p}(\sum_{i=1}^{n}{|w_i|^q})^\frac{1}{q}\\
+= \|u\|_p(\sum_{i=1}^{n}{|u_i+v_i|^{q(p-1)}})^\frac{1}{q}\\
+= \|u\|_p[(\sum_{i=1}^{n}{|u_i+v_i|^p})^\frac{1}{p}]^\frac{p}{q}\\
+= \|u\|_p(\|u+v\|_p)^\frac{p}{q}
+\]
+
+Logo:
+
+\[
+\begin{aligned}
+    &=\sum_{i=1}^{n}{|u_i+v_i|^{p-1}}\cdot (|u_i|) + \sum_{i=1}^{n}{|u_i+v_i|^{p-1}}\cdot (|v_i|)\\
+    &\leq \|u\|_p \cdot \|u+v\|_p^\frac{p}{q} + \|v\|_p \cdot \|u+v\|_p^\frac{p}{q}\\
+    (\|u+v\|_p)^p &\leq  (\|u\|_p+\|v\|_p)\|u+v\|^\frac{p}{q}\\
+    \|u+v\|_p&\leq
+\end{aligned}
+\]
+
+> finalizar
+>
+### Distância
+
+em $\mathbb{R^2}$:
+
+>imagem whats pedro
+
+$d=d(P,Q)=\sqrt{(u_1-v_1)^2 +(u_2-v_2)^2}$
+**Distância Euclidiana**
+
+Em geral,
+
+>imagem pedro cel:
+
+em geral, $u, v \text{ vetores em } \mathbb{R^n}$:
+
+\[
+d(u,v) = \|u-v\|_2
+\]
+
+\[
+(i): u, v \text{ em } \mathbb{R^n}\\
+d_\infty(u,v) = \|u-v\|_\infty
+\]
+**Distância de Chebyshev**
+
+\[
+(i): u, v \text{ em } \mathbb{R^n}\\
+d_1(u,v) = \|u-v\|_1
+\]
+**Distância de Manhattan**
