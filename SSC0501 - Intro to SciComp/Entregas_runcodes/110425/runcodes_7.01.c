@@ -1,26 +1,8 @@
-// Ordena um vetor de inteiros em ordem crescente
-int vec_order_cresc(int vec[], int n) {
-    // Definiremos a função que irá iterar os itens do vetor, de forma a ordená-los em ordem crescente
-        int i, j, temp;
-        for (i = 0; i < n - 1; i++) {
-            // O loop interno irá comparar os elementos adjacentes e trocá-los se necessário
-            // O loop externo irá iterar o vetor, de forma a garantir que todos os elementos sejam verificados
-            for (j = 0; j < n - i - 1; j++) {
-                // Se o elemento atual for maior que o próximo, trocamos os dois
-                if (vec[j] > vec[j+1]) {
-                    // Trocando os elementos
-                    temp = vec[j];
-    
-                    vec[j] = vec[j+1];
-                    
-                    vec[j+1] = temp;    
-                }
-            }
-        }
-    }
+//Dada uma string contendo apenas letras manúsculas. letrar maiúsculas e espaços, determine quantas palavras ela contém. Considere que as palavras sao separadas por um ou mais espaços e que a string não está vazia. A string pode ter espaços no início e/ ou no fim.
 
-// Contador de palavras em uma string
-int word_count() {
+#include <stdio.h>
+
+int main() {
     char str[100000];
     
     // Leitura da linha incluindo espaços. fgets lê até \n ou até o tamanho máximo.
