@@ -511,3 +511,83 @@ d_\infty(u,v) = \|u-v\|_\infty
 d_1(u,v) = \|u-v\|_1
 \]
 **Distância de Manhattan**
+
+## Aula 4
+
+### Ângulos entre Vetores
+
+$\theta \text{ é o ângulo entre os vetores } \vec{u} \text{ e } \vec{v}, 0 \leq \theta \leq 180°$. Pela geometria plana, teremos:
+
+$\|v\|,\|u-v\|,\|u\|$ são uma trinca triangular. Logo, podemos escrever, pela **lei dos cossenos:**
+
+\[
+\|u-v\|^2 = \|u\|^2 + \|v\|^2 - 2\cdot\|u\|\cdot\|v\|\cos\theta\\
+\]
+
+Mas, pela definição da norma euclideana, teremos:
+
+\[
+\begin{aligned}
+\|u-v\|^2 &= (u-v)\cdot(u-v)\\
+&=u\cdot u -u\cdot v-v\cdot u+v\cdot v\\
+&=u\cdot u +v\cdot v - 2u\cdot v\\
+&= \|u\|^2+\|v\|^2-2uv
+\end{aligned}
+\]
+
+Isolando o cosseno na expressão original e igualando a norma da diferença, teremos que:
+
+\[
+\begin{aligned}
+\|u\|^2 + \|v\|^2 - 2\cdot\|u\|\cdot\|v\|\cos\theta &= \|u\|^2+\|v\|^2-2uv\\
+\cos\theta &= \dfrac{u\cdot v}{\|u\|\cdot\|v\|}
+\end{aligned}
+\]
+
+LEMBRANDO QUE u E v SÃO NÃO NULOS.
+
+Exemplo:
+
+$$u = [2,1,2]\\ v = [1,1,1]\\
+uv = 1, \|u\| = 3, \|v\|=\sqrt{3}$$
+
+Logo, teremos que o cosseno será:
+
+$$\cos\theta = \dfrac{1}{3\sqrt{3}}$$, assim $\theta$ será igual aproximadamente 78,9°.
+
+### Vetores Ortogonais
+
+Sendo ortogonais, o ângulo entre dois vetores será 90°, logo seu cosseno será nulo. Assim, teremos que uma consequência poderá ser observada somente visualizando o produto escalar:
+
+$$u \cdot v = \|u\| \cdot \|v\|\cos\theta = 0\\
+u \cdot v = 0$$
+
+#### Definição
+
+$u \text{ e } v \text{ no } \mathbb{R^n} \text{ são ortogonais se } u \cdot v = 0$
+
+Obs: $\vec{0}\cdot\vec{v} = 0 \text{ para todo }\vec{v} \text{ pois } \vec{0} \text{ é ortogonal a qualquer vetor.}$
+
+#### Teorema de Pitágoras no $\mathbb{R^n}$
+
+$$u, v \text{ são ortogonais } \iff \|u+v\|^2 = \|u\|^2+\|v\|^2 $$
+
+> Tente realizar a prova, provando a ida e a volta
+>
+
+Uma  das aplicações possíveis seria a área de sinais ortogonais.
+
+> Procurar definição de produto escalar utilizando integração
+
+
+#### Projeções
+
+Podemos escrever que:
+
+$$proj_u(v) = \dfrac{u\cdot v}{\|u\|^2}\cdot u$$
+
+é a **projeção ortogonal de v em u**
+
+Exemplo: $u=[2,7,10], v=[-1,5,4]$. Determine p, q vetores tais que v = p+q e p//u, e q é ortogonal a u.
+
+gabarito:
