@@ -31,8 +31,8 @@ int main() {
                 break;  // Sai do loop se ocorrer uma incompatibilidade
             }
         }
-        // Se chegou no fim de B, todos os caracteres bateram: B é uma substring de A.
-        if (B[j] == '\0') {
+        // Se chegou no fim de B, todos os caracteres bateram: B é uma substring de A. Atentar-se para o caso em que B é vazio.
+        if (B[j] == '\0' || B[j] == ' ') {
             isSubstring = 1;
             break;
         }

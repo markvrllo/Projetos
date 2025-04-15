@@ -590,4 +590,171 @@ $$proj_u(v) = \dfrac{u\cdot v}{\|u\|^2}\cdot u$$
 
 Exemplo: $u=[2,7,10], v=[-1,5,4]$. Determine p, q vetores tais que v = p+q e p//u, e q é ortogonal a u.
 
-gabarito:
+gabarito: 
+
+> Encontre
+>
+
+## Aula 5 - Geometria e Vetores
+
+Exemplo: 
+
+$\text{Vamos encontrar o ponto médio } M \text{ de dois pontos } A, B.$
+
+\[\vec{AM} = \vec{m} - \vec{a}\\
+\vec{MB} = \vec{b} - \vec{m}\\
+\quad \\
+\vec{m} - \vec{a} = \vec{b} - \vec{m}
+\vec{m} = \dfrac{1}{2}(\vec{a}+ \vec{b})
+\]
+
+Resolvendo algebricamente, teremos que:
+
+$A=(x_1, y_1), B =(x_2, y_2), \vec{a} = [x_1, y_1], \vec{b} = [x_2, y_2]$
+
+Logo, \(\vec{m} = \left[\dfrac{x_1+x_2}{2}, \dfrac{y_1+y_2}{2}\right]\)
+
+Exemplo 2: Relações Geométricas no paralelogramo ABCD
+
+Seja \(M\) o ponto de intersecção das diagonais de um paralelogramo não retângulo. Vamos verificar que os pontos médios delas coincidem em \(M\).
+
+Vamos supor que \(M\) é ponto médio de \(\overline{AC}\). Logo
+
+\[\overrightarrow{BM} = \overrightarrow{BC} + \overrightarrow{CM} \]
+
+Mas \(\overrightarrow{BC} = \overrightarrow{AD}\) e \(\overrightarrow{CM} = \overrightarrow{MA}\), (são lados paralelos do paralelogramo ), assim:
+
+\[\overrightarrow{BM} = \overrightarrow{BC} + \overrightarrow{CM} = \overrightarrow{AD} + \overrightarrow{MA} = \overrightarrow{MD}\]
+
+### Retas
+
+### Equação Geral da Reta
+
+\[Ax+By+C=0\quad A,B,C \in \mathbb{R}, B \neq 0\]
+
+Vamos adaptá-la para o formato da equação reduzida da reta:
+
+\[By = -Ax-C\\
+\quad\\
+y = -\dfrac{A}{B}x-\dfrac{C}{B}\]
+
+### Equação reduzida ou NORMAL da reta:
+
+\[y=mx+k\]
+
+Exemplo: \(r: 2x + y = 0, \quad \vec{n} = \begin{bmatrix} 2 \\ 1 \end{bmatrix} , \quad \vec{X} = \begin{bmatrix} x \\ y \end{bmatrix} 
+\)
+
+Teremos:
+
+\[\vec{n}\cdot\vec{X} = 2x + y\\
+\quad\\
+r: \vec{n}\cdot\vec{X} = 0\]
+
+Veja que **\(\vec{n}\) é vetor normal a \(r\)**
+
+A norma euclidiana está principalmente ligada ao esquadro.
+
+### Equação Vetorial
+
+Dado um ponto \(X\), podemos escrever:
+
+\[X = O + \overrightarrow{OX}\\ \quad\\ \overrightarrow{OX} = t\vec{v} \quad\\\iff \\
+X = O +t\vec{v}\]
+
+Temos que \(X\) é a equação vetorial de \(r\), \(0 \neq \vec{v}\) é um vetor diretor de \(r\) e \(t\) é o parâmetro.
+
+### Equação Paramétrica
+
+Se desenvolvemos a equação vetorial, chegamos na versão paramétrica.
+
+Seja \(\vec{v} = \begin{bmatrix} -1 \\ 2 \end{bmatrix}\). Podemos escrever que:
+
+\[\begin{aligned}
+(x, y) &= (0,0) + t \cdot \begin{bmatrix} -1 \\ 2 \end{bmatrix}\\
+&= (0-t, 0+2t)\\
+&= (-t,2t), \quad t \in \mathbb{R}
+\end{aligned}
+\]
+
+**Exemplo:** Seja \(r: 2x+ y = 5, \quad P = (0,5) \implies y = 2x+5, \quad \left(\dfrac{5}{2}, 0\right)\)
+
+\(\vec{n}\cdot\overrightarrow{PX} = 0 \text{ equação normal}\\ \quad\\ \overrightarrow{PX}= X - P = [x, y-5]\)
+
+Vamos verificar!
+
+\[\begin{bmatrix} 2 \\ 1 \end{bmatrix}\cdot \begin{bmatrix} x \\ y-5 \end{bmatrix} = 2x+y-5=0 \implies 2x+y = 5\]
+
+### Definição
+
+A equação da reta \(r\) na forma normal passando pelo ponto \(P\) e com vetor normal \(\vec{n}\) é
+
+\[\vec{n}\cdot\overrightarrow{PX} = 0\]
+
+sendo \(X=(x,y)\) um ponto genérico de \(r\), válido para \(\mathbb{R^2}\)
+
+### Equação Geral da Reta de \(r\)
+
+\[ax+by = c\]
+
+com \(\vec{n} = \begin{bmatrix} a \\ b \end{bmatrix}\) o vetor normal.
+
+### A equação geral vetorial de \(r\)
+
+\[X = P + t\vec{v}, \quad t \in \mathbb{R}\\
+X = (x,y,z), \quad P = (x_0, y_0, z_0) \quad \vec{v} = \begin{bmatrix} a \\ b \\ c \end{bmatrix}\]
+
+Teremos que a equação paramétrica será
+
+\[\begin{aligned}
+(x,y,z) &= (x_0, y_0, x_0) + t \cdot \begin{bmatrix} a \\ b \\ c \end{bmatrix}\\
+&= (x_0 + ta, y_0 + tb, z_0 + tc)\\
+\end{aligned}
+\]
+
+**Exemplo:** Determine a equação vetorial da reta passando por \(A = (-1, 2, 3)\) e \(B = (0,1,4)\)
+
+Vamos utilizar a *notação de Grassmann*:
+
+\[\begin{aligned}
+\vec{v} &= \overrightarrow{AB} = B - A\\
+&= [0,1,4] - [-1,2,3]\\
+&= [1,-1,1]\\
+\end{aligned}
+\]
+
+\[r: X = (x,y,z) = (-1,2,3) + t\begin{bmatrix} 1 \\ -1 \\ 1 \end{bmatrix}, \quad t \in \mathbb{R}\]
+
+\[
+\left\{
+\begin{array}{l}
+x = -1 + t \\
+y = 2 - t, \quad t \in \mathbb{R}, \quad \text{eq. paramétrica} \\
+z = 3 + t\\
+\end{array}
+\right.
+\]
+
+Vamos verificar se \(Q = (7,10,5)\) está em \(r\)?
+
+\[
+\left\{
+\begin{array}{l}
+7 = -1 + t \\
+10 = 2 - t  \implies t = 8 = -8, \text{ absurdo!!}\\
+5 = 3 + t\\
+\end{array}
+\right.
+\]
+
+Logo \(Q\) não está em \(r\)
+
+### Equação Simétrica
+
+Seja uma reta com vetor diretor \(\vec{v} = \begin{bmatrix} a \\ b \\ c \end{bmatrix}\) e \(a,v,c \neq 0\). Seja \( P=(x,y,z) \) em \(r\).
+
+Vamos isolar o parâmetro \(t\) nas equações paramétricas. Iremos obter:
+
+\[r: \dfrac{x-x_0}{a} = \dfrac{y-y_0}{b} = \dfrac{z-z_0}{c}\]
+
+Teste para ponto \(Q = (7,10,5), (-3,6,9)\)

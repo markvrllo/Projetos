@@ -268,3 +268,96 @@ Afirmação: Sejam $p, n, a \in \mathbb{N}$. Suponha que $0<a<n$ e existem $b,c$
 Prova: Suponha que existem $x_0,y_0 \in \mathbb{Z}$ tais que isso seja verdade. Escreva $a=p \cdot c$. Multiplique a equação por $b$ então $b= bpc + bny_0$.
 
 Com $n=bpx_0 = pb$. Temos $b=ncx_0 + nby_0= n(cx_0 +by_0)$. Isso contradiz $1<b<n$.
+
+
+## aula 4 - 09/04/2025
+
+### Algoritmo Chinês do Resto
+
+Pergunta: $\text{Se} m \text{ e }  n \text{são primos entre si, } a, b \in \mathbb{Z} \text{ existe } x \in \mathbb{Z} \text{ tal que:}$
+
+\[x \equiv a \pmod{m}\\
+x \equiv b \pmod{n}\]
+
+Vamos supor que \(x\) é solução destas equações. Então existe \(k \in \mathbb{Z}\) tal que
+
+\[x = a + km\\
+x-a = km\]
+
+Portanto, teremos \(a+km \equiv \pmod{n}\).
+
+Logo
+
+\[km \equiv b -a \pmod{n}\]
+
+Como \(m\) e \(n\) são primos entre si, existe \(m' \in \mathbb{Z}\) tal que \(m \cdot m' \equiv 1 \pmod{n}\), com \(m' \equiv m' \pmod{n}\). Assim, teremos que:
+
+\[kmm' \equiv (b-a)m'\pmod{n}\\ \quad \\k \equiv (b-a)\pmod{n}\]
+
+Logo, existe \( t \in \mathbb{Z}\) tal que:
+
+\[k = (b-a)m'+tn\\ \quad \\ k-(b-a)m' = tn\]
+
+Como \( x = a + km\) temos \(x = a + m((b-a)m' + tn)\). Portanto, sabendo que \( x - a = m((b-a)m' +tn)\), ou seja, que \(x - a\) é múltiplo de \(m\), teremos \(x \equiv a \pmod{m}\):
+
+$$
+x = a + m((b-a)m'+tn)
+$$
+
+### O Pequeno Teorema de Fermat
+
+Teorema: Seja \(p\) um primo e \(a \in \mathbb{Z}\) tal que \(p \nmid a\) então:
+
+\[ad^{p-2} \equiv a^{p-1} \equiv 1 \pmod{p}\]
+
+Obs: \(p\) é primo e \(p \nmid a \iff \text{ p é primo e p e a são primos entre si} \iff \text{p é primo e o maior divisor comum de p e a é 1}\)
+
+Prova: Listamos os resíduos módulo \(p\): \(1,2,3,..., p-1\). Multiplicando cada resíduo por \(a\), obtemos \(a,2a,3a,...,a(p-1)\).
+
+Suponha que \(r_1\) seja o resíduo de \(a-1\) módulo \(p\) e \(r_2\) seja o resíduo de \(2a\) módulo \(p\). Vamos calcular \(r_1 r_2 r_3 ... r_{p-1}\). Temos
+
+\[\begin{aligned}
+    r_1 &\equiv a \pmod{p}\\
+r_2 &\equiv 2a \pmod{p}\\
+...\\
+r_{p-1} &\equiv a(p-1)\pmod{p}
+\end{aligned}
+\]
+
+---
+
+Assim, teremos que:
+
+\[
+\begin{aligned}
+r_1 r_2 r_3... r_{p-1} &\equiv (a-1)(a-2)(a-3)...(a-(p-1))\pmod{p}\\
+&\equiv a^{p-1} \cdot (1\cdot 2 \cdot 3 ... \cdot (p-1))\pmod{p}
+\end{aligned}
+\]
+
+Lembre-se \(1 \leq r_i \leq p-1\). Vamos agora mostrar que \(r_l - r_k \implies l = k\).
+
+Se \(r_k = r_l\) então \(a'k \equiv al \pmod{p}\)
+
+Como \(a\) e \(p\) sao primos entre si, existe \(a'\) tal que:
+
+\[a' \cdot ak \equiv 1k \equiv a'al \equiv 1l \pmod{p}\]
+
+Como \( 1 \leq k,l \leq p-1\) segue que \(k=l\), pois \(kl=sp\) para algum \(s \in \mathbb{Z}\).
+
+Supondo \(1 \leq k \leq l\leq p-1\), temos \(0 \leq l-k \leq p-1\). Como \(l-k = -sp\), devemos ter \(s = 0\). Portanto \(l -k = 0\) e \(l=k\).
+
+Obs: Note que se \(l \in \mathbb{Z}\) e \(l|p\) é \(l|(1 \cdot 2\cdot 3...(p-1))\), então \(l=1\) ou \(l=-1\). Assim existe \(z \in \mathbb{Z}\) tal que \(z(1 \cdot 2...\cdot (p-1)) \equiv 1 \pmod{p}\).
+
+Portanto \(1 \equiv a^{p-1} \pmod{p}\).
+
+Exemplo: \(p=5, a =7\)
+
+\[
+\begin{aligned}
+7 \cdot 1 &\equiv 2 \pmod{5}, 2 = r_1\\
+7 \cdot 2 &\equiv 4 \pmod{5}, 4 = r_2\\
+7 \cdot 3 &\equiv 1 \pmod{5}, 1 = r_3\\
+7 \cdot 4 &\equiv 3 \pmod{5}, 3 = r_4
+\end{aligned}
+\]
