@@ -758,3 +758,375 @@ Vamos isolar o parâmetro \(t\) nas equações paramétricas. Iremos obter:
 \[r: \dfrac{x-x_0}{a} = \dfrac{y-y_0}{b} = \dfrac{z-z_0}{c}\]
 
 Teste para ponto \(Q = (7,10,5), (-3,6,9)\)
+
+## Aula 6 - Planos
+
+No plano cartesiano:
+
+\[ r: 2x+by+c = 0 \quad (a,b,c \in \mathbb{R})
+    \]
+
+No espaço tridimensional: \( ax+by+cz+d=0 \quad (a,b,c,d \in \mathbb{R})\)
+
+Veja que para \(d=0\) temos a equação \(ax+by+cz=0\).
+
+Vetorialmente, podemos representar a equação do plano como:
+
+\[\vec{n}=\begin{bmatrix} a \\ b \\ c \end{bmatrix}, \quad \overrightarrow{OX} = \begin{bmatrix} x \\ y \\ z \end{bmatrix}, \text{ com O sendo a origem e } X = (x,y,z) 
+    \]
+
+\(\vec{n}\) ** é o vetor norma**
+
+### A Origem
+
+Seja \(0 = \vec{n} \cdot \overrightarrow{OX} = ax+by+cz\). Sendo \(0 = (0,0,0)\), teremos \(a \cdot 0 +b \cdot 0 +c \cdot 0 =0\). Logo, 0 satisfaz \(\mathbb{C}\).
+
+### Definição 1
+
+Um plano \(R\) passando por \(P\) e com vetor normal \(\vec{n}\) tem **equação normal**:
+
+\[ \vec{n}\cdot \overrightarrow{PX} = 0\\
+\quad \\
+\begin{bmatrix} \vec{n} = [a,b,c] \\ P = (x_0, y_0, z_0) \\ X=(x,y, z) \end{bmatrix} \quad \text{ou } [a,b,c] \cdot [x-x_0,y-y_0,z-z_0] = 0
+    \]
+
+Desenvolvendo, teremos:
+
+\[\implies a(x-x_0) + b(y-y_0) + c(z-z_0) = 0\\
+ax+by+cz+d = 0 \quad \text{sendo } d =- (ax_0+by_0+cz_0)
+\]
+
+### Definição Equação Geral do Plano
+
+A equação \(\pi: ax+by+cz+d =0 \) é uma **equação geral do plano**. Voltando para o caso \(d=0\).
+
+> Imagem de vetor n perpendicular ao plano que contém ox e ox'
+>
+
+#### Exemplo
+
+\((I) \quad P = (6,0,1), \quad \vec{n} = \begin{bmatrix} 7 \\ 10 \\ 3 \end{bmatrix}\)
+
+A equação normal será:
+
+\[\vec{n} \cdot \overrightarrow{PX}=0\\
+\quad \\
+\begin{bmatrix} 7 \\ 10 \\ 3 \end{bmatrix} \cdot \begin{bmatrix} x-6 \\ y \\ z-1 \end{bmatrix} = 0
+\]
+
+A equação geral será:
+
+\[7(x-6) + 10y + 3(z-1) = 0\\
+\implies 7x +10y+3z -45 =0
+\]
+
+### Equações Vetoriais Paramétricas
+
+Seja um vetor qualquer \(\overrightarrow{PX}\) tal que:
+
+\[\begin{aligned}
+\overrightarrow{PX} &= t\vec{u}+s\vec{v}\\
+X &= P + \overrightarrow{PX}\\
+&= P + t\vec{u}+s\vec{v}, \quad (t,s \in \mathbb{R})\\
+\end{aligned}
+\]
+
+#### Definição Equação Paramétrica do Plano
+
+A equação \(X = P + t\vec{u}+s\vec{v}\) é uma equação **vetorial * de plano passando por \(P\) e com vetores diretores \(\vec{u}\) e \(\vec{v}\).
+
+\[X=(x,y,z), P = (x_0,y_0,z_0), \vec{u} = \begin{bmatrix} m \\ n \\ p \end{bmatrix}, \vec{v} = \begin{bmatrix} e \\ f \\ g \end{bmatrix}\]
+
+Teremos que:
+
+\[\begin{aligned}
+(x,y,z) &= (x_0,y_0,z_0) + t\cdot \begin{bmatrix} m \\ n \\ p \end{bmatrix} + s \cdot \begin{bmatrix} e \\ f\\ p \end{bmatrix}\\
+&=(x_0,y_0,z_0) + \begin{bmatrix} tm \\ tn \\ tp \end{bmatrix} + \begin{bmatrix} se \\ sf\\ sp \end{bmatrix}\\
+&= (x_0,y_0,z_0) + t\begin{bmatrix} tm+se \\ tn+sf \\ tp + sg \end{bmatrix}\\
+&= (x_0 + tm+se, y_0+ tn+sf, z_0 + tp+sg)\\
+\end{aligned}
+\]
+
+Se expandirmos como um sistema de equações, podemos escrever como:
+
+\[\left\{
+\begin{array}{l}
+x = x_0 + tm + se \\
+y = y_0 + tn +sf \\
+z = z_0 +tp + sg\\
+\end{array}
+\right.
+\]
+
+Ela é a **equação paramétrica do plano** passando por P e com vetores diretores.
+
+#### Exemplo:
+
+\[\left\{
+\begin{array}{l}
+P = (0,0,0) \\
+Q = (7,9,8) \\
+R = (10,4,7)\\
+\end{array}
+\right.
+\]
+
+Vamos encontrar a **equação vetorial**, **equação paramétrica** e responder se (1,2,2) está em \(\pi\), sendo ele o plano definido por P, Q, R.
+
+>resolve aew, bixão!
+Primeiro definimos os vetores pr e pq, para verificarmos se serão paralelos. Após isso, basta resolver cada uma. A última, o ponto não está no plano \(pi\).
+
+## Aula 7 - Produto Vetorial e Propriedades
+
+### Produto Vetorial
+
+#### Definição 
+
+Seja \(\vec{u} = \begin{bmatrix} u_1 \\ u_2 \\ u_3 \end{bmatrix}, \vec{v} = \begin{bmatrix} v_1 \\ v_2 \\ v_3 \end{bmatrix}\), teremos que o produto vetorial será:
+
+\[
+\vec{u} \times \vec{v} = \begin{bmatrix} u_2 \cdot v_3 -u_3v_2 \\ u_3 \cdot v_1  -u_1v_3 \\ u_1 \cdot v_2 -u_2v_1 \end{bmatrix}
+\]
+
+Cálculo do produto vetorial(Regra de Sarrus)
+
+\(\vec{u} = \begin{bmatrix} u_1 \\ u_2 \\ u_3 \end{bmatrix}, \vec{v} = \begin{bmatrix} v_1 \\ v_2 \\ v_3 \end{bmatrix}\)
+
+\[\vec{u} \times \vec{v} = \begin{bmatrix} \vec{i} & \vec{j} & \vec{k} \\ u_1 & u_2 & u_3 \\ v_1 & v_2 & v_3 \end{bmatrix} \]
+
+#### Exemplo
+
+\(\vec{u} = \begin{bmatrix} 1 \\ 0 \\ -1 \end{bmatrix}, \vec{v} = \begin{bmatrix} 3 \\ 2 \\ 0 \end{bmatrix}\\
+\quad \\
+\vec{u} \times \vec{v} = \begin{bmatrix} 0\cdot 0 -(-1)2 \\ (-1)\cdot 3 - 1\cdot 2 \\ 1\cdot 2 - 0 \cdot 3 \end{bmatrix}= \begin{bmatrix} 2 \\ -3 \\ 2 \end{bmatrix}\)
+
+Se fizermos a partir do determinante dos versores \(\vec{i}, \vec{j}, \vec{k}\), teremos:
+
+\[\vec{u} \times \vec{v} = \begin{vmatrix}
+\vec{i} & \vec{j} & \vec{k} \\ 1 & 0 & -1 \\ 3 & 2 & 0 
+\end{vmatrix} = \begin{bmatrix} 2 \\ -3 \\ 2 \end{bmatrix}\]
+
+Veja que o vetor resultante é o **vetor normal aos dois vetores** \(\vec{u}\) e \(\vec{v}\).
+
+#### Exemplo
+
+Seja \(\pi\) um plano passando por \(P=(-1,0,2)\), com vetores diretores \(\vec{u} = \begin{bmatrix} 1\\0\\-1\end{bmatrix}, \vec{v} = \begin{bmatrix} 3\\2\\0\end{bmatrix}\)
+
+Encontre uma equação geral para \(\pi\).
+
+**Solução:**
+
+\(\vec{n} = \vec{u} \times \vec{v} = \begin{bmatrix} 2 \\ -3 \\ 2 \end{bmatrix}\) é um vetor normal a \(\pi\).
+
+Mas veja que \(\vec{n}\cdot \overrightarrow{PX} = 0\)
+
+\[
+\begin{aligned}
+\overrightarrow{PX} &= X - P\\
+&=[x-(-1); y-0; z-2]\\
+&=[x+1, y , z-2]\\
+\end{aligned}\\
+\quad\\
+\text{Substituindo na equação anterior, teremos: }
+\quad\\
+[2,-3,2] \cdot [x+1,y,z-2] = 0\\
+\implies\\
+2(x+1) - 3y +2(z-2) = 0\\
+\quad \\
+\pi: 2x-3y +2z-2 = 0
+\]
+
+Em geral, seja \(\pi\) um plano por \(P(x_0, y_0, z_0)\) com vetores diretores \(\vec{u} =[u_1, u_2, u_3]\) e \(\vec{v}=[v_1,v_2, v_3]\) podemos encontrar a equação geral do plano pelo ponto P:
+
+> DEDUZA
+>
+
+\[
+\begin{vmatrix}x-x_0 & y-y_0 &z -z_0\\ u_1 & u_2 & u_3\\ v_1 &v_2&v_3\end{vmatrix} = 0
+\]
+
+#### Exemplo
+
+Encontre a equação geral do plano \(\pi\) passando por \(P=A=(1,1,1), B=(2,1,2), C=(3,1,1)\).
+
+Vamos encontrar os vetores \(\vec{u}=\overrightarrow{AB}\) e \(\vec{v}=\overrightarrow{AC}\)
+
+Sabemos que os vetores anteriores são paralelos \(\iff \vec{u} = \alpha\vec{v}\), para algum escalar \(\alpha\), porém facilmente percebemos que não existe tal \(\alpha\)(calcule!).
+
+Assim, os vetores *não são paralelos*, logo \(\vec{u}\) e \(\vec{v}\) **são vetores diretores de \(\pi\)**.
+
+Aplicando a equação geral do plano:
+
+\[
+\begin{vmatrix} 
+x-1 & y-1 & x-1\\
+1 & 0 & 1\\ 
+2&0&0 \\ 
+\end{vmatrix}\\
+\]
+
+\[
+\quad\\
+0(x-1) + 2(y-1)+0(z-1)-0(y-1)+0(x-1)+0(z-1) = 2(y-1) = 0\\
+
+\pi: y-1=0
+\]
+
+### Propriedades
+Sejam u, v, w vetores e c um escalar.
+
+\(
+\begin{aligned}\\
+\vec{u} \times \vec{v}&=-\vec{v}\times\vec{u}\\
+\vec{u} \times \vec{0} &= \vec{0}\\
+\vec{u} \times \vec{u} &= \vec{0}\\
+(\vec{u} \times c\vec{v}) &= c\vec{u} \times \vec{v}\\
+\vec{u} \times (\vec{v}+\vec{w}) &= \vec{u} \times \vec{v} + \vec{u} \times \vec{w}
+
+\end{aligned}
+\)
+
+>> checar depois os dois trechos de cima e verificar depois
+
+## Aula 8 - Sistema de Equações Lineares
+
+Vamos definir **Equação Linear** como:
+
+\[
+a_1x_1 + a_2x_2 + a_3x_3 + ... +a_nx_n = b
+\]
+
+com \(x_1, x_2, ...x_n \)*variáveis* ou incógnitas, \(a_1, a_2, ... a_n\) os *coeficientes da equação* e \(b\) o *termo independente*.
+
+### Exemplo:
+
+\[x_1 -2x_2 + 4x_3 =-10,\\
+3x+4y-9z=1\\
+\frac{\pi}{2}t + s\sin{\frac{pi}{3}} = 13\]
+
+SÃO EQUAÇÕES LINEARES
+
+\[x^2+y^2+x^2 = 3\\
+\quad\\
+\sin{\frac{t}{2}} + \sqrt{s} = 11\\
+\quad\\
+e^{x_1} - 2x_2 + x_3 =0\\
+\]
+
+NÃO SÃO EQUAÇÕES LINEARES
+
+---
+
+*Uma solução* de uma equação linear é um vetor \([s_1, s_2, s_3,... s_n]\) com ponto \((s_1,s_2,..., s_n)\) tal que substituindo \(x_1=s_1, x_2 = s_2,... x_n = s_n\) vale \(a_1x_1 + a_2x_2 + a_3x_3 + ... +a_nx_n = b\).
+
+### Exemplo 2:
+
+\[2x-y = 4,\\
+\quad\\
+[2,0] \text{ é solução, pois } 2\cdot 2 -0 =4
+\]
+
+*Um sistema de equações lineares(SEL)* é um conjunto finito de equações lineares nas mesmas variáveis. *Uma solução* de um **SEL** é um vetor \([s_1,...,s_n]\) que é solução simultânea de todas as equações.
+
+### Exemplo 3:
+
+\[\begin{cases}
+x-y=2\\
+x+y=0
+\end{cases}\]
+
+é SEL com 2 equações e 2 incógnitas, com \([1,-1]\) sendo a solução.
+
+O **conjunto solução** de um SEL é um conjunto de todas as soluções de SEL. Veja que podemos somar a primeira equação com a segunda, e ainda assim o sistema resultado ainda manteria o mesmo conjunto solução. Chamamos sistemas de mesmo conjunto solução como **sistemas equivalentes**.
+
+Entretanto, quando tivermos um sistema de equações no qual uma ou mais equações do sistema são **uma combinação linear** das demais equações, teremos o seguinte problema:
+
+### Exemplo 4:
+
+\[
+\begin{cases}
+x-2y = 1\\
+2x-4y = 2\\
+\end{cases}
+\quad\\
+\implies\\
+\quad\\
+\text{ dividindo a equação 2...}
+\quad\\
+\implies\\
+\quad\\
+\begin{cases}
+x-2y = 1\\
+x-2y = 1\\
+\end{cases}
+\quad\\
+\implies\\
+\quad\\
+\begin{cases}
+x-2y = 1\\
+\end{cases}
+\]
+
+Logo o sistema terá **infinitas soluções** que poderemos parametrizar como \(x-2y=1\), com\(y=t, t \in \mathbb{R}\), cuja solução terá a forma:
+
+\[S = {(1+2t,t) | t \in \mathbb{R}} \text{ ou } S = {(1+2t,t) | t \in \mathbb{R}}\]
+
+Veja que se ao longo da simplificação de um sistema linear, obtermos alguma igualdade falsa, dizemos que **o sistemas não possui solução.**
+
+Assim, podemos listar que um sistema linear possui:
+
+- única solução (SPD ou sistema possível e determinado);
+- infinitas soluções (SPI ou sistema possível e indeterminado);
+- Não possui soluções (SI ou sistema impossível);
+
+### Representação de matrizes \(n x m\) com coeficientes reais:
+
+\[
+\begin{bmatrix}
+a_{11}&a_{12}&a_{13}&...&a_{1m}\\
+a_{21}&a_{22}&a_{23}&...&a_{2m}\\
+...&...&...&...&...\\
+a_{n1}&a_{n2}&a_{n3}&...&a_{nm}
+\end{bmatrix}
+\]
+
+é uma matriz com \(n\) linhas e \(m\) colunas.
+
+#### Exemplo
+
+Seja o seguinte sistema linear abaixo:
+
+\[
+\begin{cases}
+x-y+2z = 4\\
+4x+3y+z = 7\\
+3x+2y-3z=1\\
+\end{cases}
+\]
+
+Podemos esboçar a *matriz aumentada do sistema* como:
+
+\[
+\begin{bmatrix}
+1&-1&2&4\\
+4&3&1&7\\
+3&2&-3&1\\
+\end{bmatrix}
+\]
+
+Onde a matriz-coluna do lado esquerdo é o *vetor dos termos independentes* e o restante da matriz, a *matriz dos coeficientes do sistema de equações lineares.*
+
+#### Matriz na forma Escalonada
+
+\[
+\begin{bmatrix}
+1&-1&-1&2\\
+0&1&3&5\\
+0&0&5&10\\
+\end{bmatrix}
+\]
+
+Uma matriz está na *forma escalonada por linhas* se:
+
+1. Toda linha nula está nas últimas linhas;
+2. Toda linha não nula tem o 1º coeficiente não nulo(*elemento pivô*) em uma coluna à esquerda de todas as colunas dos pivôs das linhas abaixo.

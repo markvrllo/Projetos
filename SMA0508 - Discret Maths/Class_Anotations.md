@@ -361,3 +361,98 @@ Exemplo: \(p=5, a =7\)
 7 \cdot 4 &\equiv 3 \pmod{5}, 3 = r_4
 \end{aligned}
 \]
+
+## Aula 5 - 09/04/2025
+
+### Vamos conversar sobre o teorema de Fermat
+
+Se \(p\) é primo e \(a \in \mathbb{Z}\) que não divide \(p\), então:
+
+\[a^{p-1} \equiv 1 \pmod{p}\]
+
+Lembre-se que se:
+
+\[ a \equiv b \pmod{n} \\\iff \\\text{existe } k \in \mathbb{Z} \text{ tal que } a-b = kn \\\iff\\
+\begin{aligned}
+a &= jn +r, \text{ com } j, i \in \mathbb{Z}, 0 \leq r < n\\
+b &= in +r\\
+\end{aligned}
+\]
+
+#### Exercícios:
+
+1. Calcule o resto da divisão de \(10^6\) por 7.
+
+Vamos resolver!
+
+\[
+10^6 \equiv r \pmod{7}
+\]
+
+Aplicando o Teorema de Fermat para \(p=7\) e \(a=10\). Temos que \(a^{7-1} \equiv 1 \pmod{7}\), ou seja, \(10^6 \equiv 1 \pmod{7}\)
+
+obs: \(a = jn+r \implies a-r = jn, a \equiv r \pmod{n}\)
+
+2. Calcule o resto da divisão de \(10^135\) por 7.
+
+Vamos Resolver!
+
+Primeiro, vamos ver como forçar o resultado anterior aqui:
+
+\(135 = 6 \cdot 22 + 3\), logo \(10^135 = 10^{6 \cdot 22 + 3} = 10^{6 \cdot 22} \cdot 10^3
+= (10^6)^{22} \cdot 10^3 \)
+
+Substituindo na congruência fornecida, teremos:
+
+\[
+\begin{aligned}
+10^{135} &\equiv (10^6)^{22} \cdot 10^3 \pmod{7}\\
+10^{135} &\equiv 1^{22} \cdot 10^3 \pmod{7}\\
+10^{135} &\equiv 10^3 \pmod{7}\\
+&\equiv 6 \pmod{7}
+\end{aligned}
+\]
+
+3. Calcule o resto de \(10^{65} \pmod{7}\) e de \(3^{78} \pmod{7}\).
+
+Queremos \(0 \leq r < 7 \) tal que:
+
+\[
+\begin{aligned}
+10^{65} \equiv r \pmod{7}
+\end{aligned}
+\]
+
+\(65 = 6 \cdot 10 + 5\), logo \(10^{65} = (10^6)^{10} \cdot 10^5\)
+
+Substituindo no módulo, teremos:
+
+\[
+\begin{aligned}
+10^{65} &\equiv (10^6)^{10}{10^5} \pmod{7}\\
+&\equiv 1^{10} \cdot 10^5 \pmod{7}\\
+&\equiv 10^3 \cdot 10^2 \pmod{7}\\
+&\equiv 6 \cdot 10^2 \pmod{7}\\
+&\equiv 600 \pmod{7}
+\end{aligned}
+\]
+
+Veja que \(600 = 7 \cdot 85 + 5\), logo \(600 \equiv 5 \pmod{7}\)
+
+> Inserir aqui a solução do 3^78
+>
+>
+
+4. Qual o resto da divisão de \(2^{6556423} \pmod{31}\).
+
+
+
+5. Qual o resto de \(2^{11^{38765}} \pmod{31}\).
+
+
+6. Calcule o resto de \(2^{13^{98765}} \pmod{31}\).
+
+
+## Aula 5 - 30/04/2025 - Criptografia RSA
+
+> Colocar a tabela de números correspondentes ao alfabeto
