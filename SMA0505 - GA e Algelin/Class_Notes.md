@@ -1130,3 +1130,552 @@ Uma matriz está na *forma escalonada por linhas* se:
 
 1. Toda linha nula está nas últimas linhas;
 2. Toda linha não nula tem o 1º coeficiente não nulo(*elemento pivô*) em uma coluna à esquerda de todas as colunas dos pivôs das linhas abaixo.
+
+## Aula 9 - Operações Elementares nas Linhas
+
+1. Trocar Linhas;
+2. Multiplicar uma linha por um número;
+3. Somar uma linha com um múltiplo de outra;
+
+**Notação:** 
+- \(L_i = \) linha i;
+- \(L_i \iff L_1\) trocar linha i por j;
+- \(kL_i\) multiplicar \(L_i\) por \(k\);
+- \(L_i+kL_j\) : \(L_i\) somado com \(L_j\) multiplicado por \(k \geq 0\);
+### Exemplo:
+
+Resolva \(
+\begin{cases}
+x+y+z = 2\\
+2x-y+5z = 4\\
+3x+2y+z=1\\
+\end{cases}
+\)
+
+\[
+\begin{bmatrix}
+1&1&-1&2\\
+2&-1&5&4\\
+3&0&1&1\\
+\end{bmatrix} \implies \\
+L_2-2L_1\\
+L_3-3L_1\\
+\begin{bmatrix}
+1&1&-1&2\\
+0&-3&7&0\\
+0&-1&4&-5\\
+\end{bmatrix}
+\implies \\
+-L_3\\
+\begin{bmatrix}
+1&1&-1&2\\
+0&-3&5&0\\
+0&1&-4&5\\
+\end{bmatrix}
+\implies \\
+L_2 <-> L_3\\
+\begin{bmatrix}
+1&1&-1&2\\
+0&1&-4&5\\
+0&-3&7&0\\
+\end{bmatrix}
+\implies \\
+L_3 + 3L_2\\
+\begin{bmatrix}
+1&1&-1&2\\
+0&1&-4&5\\
+0&-0&-5&15\\
+\end{bmatrix}
+\]
+
+Veja que existe **mais de uma forma escalonada**, além dessa última.
+
+Finalmente, resolvendo a forma abaixo:
+
+\[
+\begin{cases}
+x+y-z = 2\\
+y-4z = 5\\
+-5z=15\\
+\end{cases}
+\quad\\
+
+z=-3 \implies y= -7, x = 6\\
+
+\mathbb{S} = (6,-7,-3)
+\]
+
+Veja que a solução da equação **é o ponto na intersecção dos planos** definidos por cada equação. Além disso, as operações elementares realizadas são **reversíveis**, mas que raios seria isso?
+
+**Definição** Duas matrizes A e B (de mesmo tamanho) são **equivalentes** se existe uma sequência finita de operações elementares que transformam A em B.
+
+
+\[A \to A_1 \to A_2 \to... \to A_n = B\], onde \(\to\) é uma operação elementar. Podemos utilizar também o símbolo \(A \sim B\) para representar equivalência.
+
+### Teorema:
+A, B são equivalentes \(\iff\) A e B tem uma mesma forma escalonada.
+
+### Prova \(\implies\)
+
+\[A \to A_1 \to A_2 \to... \to A_n = B \to B_1 \to B_2 \to... \to B_m = E \implies E \text{ é uma forma escalonada de A e Z}\]
+
+\(\text{a volta}\)
+
+\[A \to A_1 \to A_2 \to... \to A_n = E\\ B \to B_1 \to B_2 \to... \to B_m = E \]
+
+Mas veja que \(E\) pode ser retornada à uma matriz idêntica R, logo elas são equivalentes!
+
+
+### Método de Eliminação de Gauss
+
+1. Encontre a matriz aumentada do Sistema de Equações Lineares;
+2. Ache sua **forma escalonada**;
+3. Ache a solução fazendo a substituição de trás para frente;
+
+Para saber mais, pesquisar o artigo de Gauss sobre o cálculo da órbita do Asteróide Ceres.
+
+### Exemplo:
+
+Resolva \(
+\begin{cases}
+w-x-y +2z = 1\\
+2w -2x -y+3z =3\\
+-w+x-y=-3\\
+\end{cases}
+\)
+
+Escrevendo sua matriz completa, teremos:
+
+\[
+\begin{bmatrix}
+1&-1&-1&2&1\\
+2&-2&-1&3&3\\
+-1&1&-1&0&-3\\
+\end{bmatrix} \implies \\
+L_2-2L_1\\
+L_3+L_1\\
+\begin{bmatrix}
+1&-1&-1&2&1\\
+0&0&1&-1&1\\
+0&0&-2&2&-2\\
+\end{bmatrix}
+\implies \\
+L_3+2L_2\\
+\begin{bmatrix}
+1&-1&-1&2&1\\
+0&0&1&-1&1\\
+0&0&0&0&0\\
+\end{bmatrix}
+\]
+
+As variáveis correspondem as posições dos elementos pivôs são *variáveis dependentes* \((w,y)\). E as outras variáveis são as *variáveis livres* \((x,z)\). Logo, seja \(x=t, z=s\, t, s \in \mathbb{R}\).
+
+\[\begin{cases}
+w = 2+t-s\\
+x=t\\
+y=1+s\\
+z=s\\
+\end{cases}\]
+
+A solução **geral* será: \(\begin{bmatrix}
+w\\
+x\\
+y\\
+z\\
+\end{bmatrix}=\begin{bmatrix}
+2+t-s\\
+t\\
+1+s\\
+s\\
+\end{bmatrix}\)
+
+obs: Dado A uma matriz, qualquer forma escalonada de A tem o mesmo nº de linhas nulas.
+
+### Definição:
+O posto de uma matriz A é o nº de linhas não-nulas de qualquer uma das suas formas escalonadas.
+
+**Notação**: \(\mathrm{\text{posto}{(A)}}\)
+
+### Teorema do Posto
+
+Seja A a matriz de coeficientes de algum SEL com n variáveis. Então:
+
+\[\text{nº variáveis livres }= n - \mathrm{\text{posto}{(A)}}\]
+
+Uma aplicação possível é a **análise de redes**. Como a quantidade de ampères que entra em um nó é a mesma quantidade que sai, então teremos um sistema de equações que podemos utilizar dita técnica para resolvê-lo.
+
+> Inserir o exemplo do delta de correntes presente nas notas de aula.
+>
+
+
+## Aula 10 - Matrizes
+
+\[
+\begin{bmatrix}
+a_{11}&a_{12}&a_{13}&...&a_{1m}\\
+a_{21}&a_{22}&a_{23}&...&a_{2m}\\
+...&...&...&...&...\\
+a_{n1}&a_{n2}&a_{n3}&...&a_{nm}
+\end{bmatrix}
+\]
+
+A matriz acima é uma matriz \(m x n, m,n \in \mathbb{R}\), com entradas reais \(a_{ij} \in \mathbb{R}\), \(m\) linhas e \(n\) colunas.
+
+**Notação**: \(A=[a_{ij}]\) ou \(A=[a_{ij}]_{m \times n}\).
+
+**Matriz-linha**: matriz \(1 \times n\);
+**Matriz-coluna**: matriz \(n \times 1\);
+
+Tendo exposto isso, vamos definir \(M_{m \times n}(\mathbb{R})\) como o conjunto das matrizes \(m \times n\) com entradas reais.
+
+\[\begin{bmatrix}
+1+i & -i\\
+0&2\\
+\end{bmatrix} \in M_{2 \times 2}(\mathbb{C})\]
+
+### Matriz Quadrada
+
+Chamamos uma matriz **quadrada** se \(m = n\).
+
+\[
+\begin{bmatrix}
+a_{11}&a_{12}&a_{13}&...&a_{1n}\\
+a_{21}&a_{22}&a_{23}&...&a_{2n}\\
+...&...&...&...&...\\
+a_{n1}&a_{n2}&a_{n3}&...&a_{nn}
+\end{bmatrix}
+\]
+
+Dizemos que a *diagonal principal* de uma matriz quadrada contém os elementos \(a_{11}, a_{22}, ..., a_{nn}\), ou seja \(a_{ii}\).
+
+### Função Traço
+
+Podemos definir a função Traço como:
+
+\[Tr: M_{m \times n}(\mathbb{R}) \to \mathbb{R}\\
+A = [a_{ij}]_{n \times n} \to a_{11}+ a_{22}+...+a_{nn} = tr(A)
+\]
+
+### Matriz Diagonal
+
+Dada uma matriz quadrada, dizemos que a matriz é **diagonal** se todas as entradas fora da diagonal principal são zero.
+
+\[A=[a_{ij}], a_{ij} = 0, \forall \quad 1 \leq i \neq j \leq n\]
+
+### Matriz Escalar
+
+Uma matriz quadrada é **escalar** se é diagonal e as entradas da diagonal são iguais.
+
+### Matriz Identidade
+
+Se uma matriz quadrada é **escalar** com entradas diagonais iguais a 1, chamamos ela de matriz **identidade**.
+
+\[I_n = diag[1,1,1,...,1]\]
+
+### Operações
+
+\(A=[a_{ij}], B=[b_{ij}]\), com ordem \(m \times n\). As operações entre elas podem ser definidas como:
+
+\[
+A+B:=[a_{ij}+b_{ij}]\\
+\quad\\
+c \cdot A=[c \cdot a_{ij}], c \in \mathbb{R}\\
+\quad\\
+A-B:= A + (-1)B:=[a_{ij}+(-1)b_{ij}]\\
+\quad\\
+\]
+
+### Multiplicação
+
+Veja que multiplicação de matrizes só é possível se a dimensão interna do produto das matrizes for **idêntica**:
+
+\[A=[a_{ij}]_{k \times n}, B =[b_{ij}]_{n \times o}\]
+
+Veja que \(A \cdot B\) **existe**, mas \(B \cdot A\) não, para \(k \neq o\).
+
+Assim, podemos definir a multiplicação como:
+
+\[
+\begin{bmatrix}
+a_{11}&a_{12}\\
+a_{21}&a_{22}\\
+\end{bmatrix} \cdot \begin{bmatrix}
+b_{11}\\
+b_{21}\\
+\end{bmatrix}= \begin{bmatrix}
+c_{11}\\
+c_{21}\\
+\end{bmatrix}\\
+\quad\\
+
+\begin{cases}
+c_{11} = a_{11}b_{11} + a_{12}b_{21}\\
+c_{21} = a_{21}b_{12} + a_{22}b_{22}\\
+\end{cases}
+\]
+
+Agora, podemos generalizar para um cálculo tal como:
+
+\[c_{ij} = a_{i1}b_{1j}+a_{i2}b_{2j}+...+ a_{in}b_{nj} \forall i,j\]
+
+### Representação de Sistemas Lineares como matrizes:
+
+\[
+\begin{cases}
+x_1+2x_2-3x_3 = 1\\
+x_1+3x_2 = 2\\
+2x_2-4x_3 = -1\\
+\end{cases}
+\]
+
+Podemos representar o sistema acima como:
+
+\[
+\begin{bmatrix}
+1&2&-3\\
+1&3&0\\
+0&2&-4\\
+\end{bmatrix} \cdot \begin{bmatrix}
+x_1\\
+x_2\\
+x_3\\
+\end{bmatrix} = \begin{bmatrix}
+1\\
+2\\
+-1\\ 
+\end{bmatrix}
+\]
+
+Podemos escrever isso como \(A \cdot X = b\)
+
+
+## Aula 11 - Álgebra das Matrizes
+
+### Propriedades
+Para cada propriedade abaixo, suponha que as operações estão definidas(\(c_1,c_2,c_3 \in \mathbb{R}\)):
+
+1. A + (B+C) = (A+B) + C;
+2. A+0 = A = 0+A (0 sendo a matriz nula de mesma dimensionalidade que A);
+3. A+B = B+A;
+4. c(A+B)=cA+cB;
+5. \((c_1+c_2)A= c_1A+c_2A\);
+6. \(c_1c_2A=c_1(c_2A)\);
+7. \((AB)C=A(BC)\);
+8. \(AI_n=I_mA=A\)(A é matriz mxn);
+9. \((A+B)C=AC+BC\);
+10. \(A(B+C) = AB+AC\);
+
+### Propriedades da Transposta
+
+1. \((A^T)^T=A\)
+2. \((A+B)^T=A^T+B^T\);
+3. \((cA)^T=cA^T\);
+4. \((AB)^T=B^TA^T\);
+5. \((A^n)^T=(A^T)^n\);
+
+### Teorema
+
+1. A matriz \(n \times n \implies A+A^T \) é simétrica;
+2. B é matriz \(m \times n \implies BB^T, B^TB\) é simétrica;
+
+### Matrizes Inversas
+
+Uma matriz quadrada \(n \times n\) A é **invertível** se existe A' tal que:
+
+\[AA'=A'A=I_n\]
+
+Veja que se utilizarmos a inversa A' em um sistema linear do tipo \(Ax=b\), teremos:
+
+\[A'Ax=A'b\\
+I_nx=A'b\\
+x=A'b\]
+
+### Propriedades da Inversa
+
+1. A é invertível\(\implies A^{-1}\) é invertível com inversa \((A^{-1})^{-1}=A\)
+2. A é invertível\(\implies cA\) é invertível com \((cA)^{-1}=\frac{1}{c}A^{-1}\)
+3. A,B invertíveis (de mesma ordem) \(\implies AB \) é invertível e \((AB)^{-1}=B^{-1}A^{-1}\)
+4. A é invertível \(\implies A^T\) é invertível com \((A^T)^{-1}=(A^{-1})^T\)
+5. A é invertível, \(n \in \mathbb{N}\), \(\implies A^n\) é invertível com \((A^n)^{-1}=(A^{-1})^n\)
+
+
+## Aula 12 - Matrizes Elementares
+
+Uma matriz \(n \times n\) é dita **elementar** se ela é obtida de \(I_n\) por *uma única* operação elementar nas linhas.
+
+Logo, podemos escrever que dado uma matriz elementar E, podemos:
+
+\[
+A \to A' \text{ operação elementar}\\
+I_n \to E \text{operação elementar}\\
+\implies A' = E \cdot A
+\]
+
+Logo, \(I_n \to E_1 I_n = E_1\), onde a operação elementar em si é **sempre reversível**, ou seja, \(E_2 E_1 = I_n\). Dessa forma, podemos escrever que :
+
+E é matriz elementar \(\implies \) E é invertível e o inverso \(E^{-1}\) é matriz elementar.
+
+Além disso, teremos que a definição de uma **forma escalonada reduzida** se:
+
+1. Está na forma escalonada;
+2. Cada elemento líder é igual à 1:
+3. Em cada coluna com um elemento líder e as outras entradas são nulas;
+
+### Fato
+
+Toda matriz é equivalente a uma matriz na forma escalonada reduzida, ou seja, \(A \to A_1 \to A_2 \to ... \to B\), e B está na forma escalonada reduzida.
+
+### Teorema das Matrizes Inversas
+
+Seja A uma matriz \( n \times n\). As seguintes afirmações são equivalentes:
+
+1. A é invertível;
+2. \(Ax=b\) tem uma única solução;
+3. \(Ax = 0\) tem apenas solução trivial \(x_1=x_2=...x_n=0\);
+4. A é equivalente a \(I_n\);
+5. A é produto de matrizes elementares;
+
+> Prove it!
+
+
+Uma aplicação teórica possível é o seguinte teorema:
+
+A,B matriz \(n \times n\)
+
+\[
+AB=I_n \implies B \text{ é invertível com } A=B^{-1} \text{(logo A é inversível)}
+\]
+
+### Cálculo da Inversa
+
+\[
+C[A|B] = [CA|CB]
+\]
+
+Basicamente, você escreve a matriz de origem A, escreve a identidade ao lado, e tenta resolver a matriz completa, tentando transferir o lado esquerdo na matriz identidade. O que resultar do lado direito será a matriz inversa da matriz de origem A. Os processos são apenas **combinações lineares* das linhas.
+
+## Aula 13 - AutoValores e Autovetores
+
+### Motivação: Cadeias de Decisão de Markov
+
+> Inserir um exemplo melhor que o do professor
+
+
+### Definição
+
+Seja A uma matriz \(n \times n\). Um escalar \(\lambda\) é um **autovalor** de A, se existe vetor \(X \neq 0\) tal que:
+
+\[
+AX = \lambda X
+\]
+
+Neste caso, X é um **autovetor** de A associada a \(\lambda\).
+
+### Definição de AutoEspaço
+
+Seja A matriz quadrada e \(\lambda\) um autovalor de A. O conjunto de todos os autovetores, junto com o vetor nulo, é o **autoespaço** de \(\lambda\). 
+
+Notação: \( E_{\lambda}\)
+
+## Aula 14 - Autovalores e Autovetores: Interpretação Geométrica
+
+\[
+\vec{x} // A\vec{x} \iff A \vec{x}= \lambda \vec{x}
+\]
+
+Ou seja, \(\lambda \text{ é autovalor } \iff \vec{x} \text{ é autovetor} \)
+
+Lembrando que \(\vec{u} // \vec{v}\) se e somente se \( \vec{u} = \lambda \vec{v}\), para algum escalar \(\lambda\).
+
+Se \(A \vec{x}\) é perpendicular a \(\vec{x}\), teremos que Ax será uma reflexão de x em algum eixo de coordenadas.
+
+Os autovetores de A são da forma \(\begin{bmatrix}
+x\\
+0\\
+\end{bmatrix}\), logo teremos que \(\lambda = 1\) é autovalor e \(\begin{bmatrix}
+x\\
+0\\
+\end{bmatrix}\) são os autovetores.
+
+\[
+E_1 = \left\{\begin{bmatrix}
+x\\
+0\\
+\end{bmatrix} | x \in \mathbb{R} \right\}
+\]
+
+
+## Vendo com coordenadas polares!
+
+Seja r a norma de \(\vec{x}\), com:
+
+\[x = r \cos{\alpha}\\
+y = r\sin{\alpha}\]
+
+Vamos transformar eles com o ângulo \(\theta\) entre eles:
+
+\[
+x' = r cos{\alpha + \theta}
+y' = r sin{\alpha + \theta}
+\]
+
+Abrindo ambas as funções trigonométricas, podemos chegar até a matriz de rotação abaixo:
+
+\[\begin{bmatrix}
+x'\\
+y'\\
+\end{bmatrix}
+= A \cdot \begin{bmatrix}
+x\\
+y\\
+\end{bmatrix}
+= \begin{bmatrix}
+x \cos{\theta} -y \sin{\theta}\\
+x \sin{\theta} + y \cos{\theta}\\
+\end{bmatrix}
+\]
+
+Assim, teremos que A será igual a:
+
+\[
+A = \begin{bmatrix}
+\cos{\theta} & -\sin{\theta}\\
+\sin{\theta} & \cos{\theta}\\
+\end{bmatrix}
+\]
+
+Ao tentarmos achar seu autovalor, podemos calcular:
+
+\[
+\left(A-\lambda I_2\right) \cdot \begin{bmatrix}
+x\\
+y\\
+\end{bmatrix} = \begin{bmatrix}
+0\\
+0\\
+\end{bmatrix}\\
+\therefore\\
+A= \begin{bmatrix}
+\cos{\theta} - \lambda & -\sin{\theta}\\
+\sin{\theta} & \cos{\theta}-\lambda\\
+\end{bmatrix}
+\]
+
+### Conclusões de acordo com \(\theta\)
+
+Se \(0 < \theta < 2 \pi\) e \(\theta + \pi\) \(\implies A_{\theta}\) não possui autovetores.
+
+## Determinantes
+
+Vamos definir aqui o determinante mais chato de ser lembrado, facilmente.
+
+Seja \(A_{ij}\) a matriz obtida de A ao eliminarmos a linha i e coluna j.
+
+\[
+det A = \sum_{i=1}^n\sum_{j=1}^n{(-1)^{i+j}a_{ij}det A_{ij}}
+\]
+
+> Insira aqui a definição do teorema da Expansão de Laplace
+>
+
+![1748993501275](image/Class_Notes/1748993501275.png)

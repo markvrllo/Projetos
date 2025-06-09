@@ -456,3 +456,31 @@ Veja que \(600 = 7 \cdot 85 + 5\), logo \(600 \equiv 5 \pmod{7}\)
 ## Aula 5 - 30/04/2025 - Criptografia RSA
 
 > Colocar a tabela de números correspondentes ao alfabeto
+
+
+
+## Aula 8 - Máquinas de Turing
+
+Vamos descrever uma máquina M tal que M reconhece sequências de símbolos da forma \(a_1 a_2 a_3 ... a_n B a_1 a_2 .... a_n\). Suponha que tenhamos uma fita com a expressão \(abbaaaBabbaaaBBBB\)(o B é considerado como espaço em branco).
+
+### Definição:
+
+Uma máquina de Turing é uma 7-upla \([Q, \sum, \Gamma, \delta, q_0, q_{aceita}, q_{rejeita} ]\)
+
+1. Q é um conjunto de estados;
+2. \(\sum\) é o alfabeto inicial, com o espaço vazio \(B \nsubseteq \sum\);
+3. \Gamma é um alfabeto com espaço vazio \(B \in \Gamma , \sum \subseteq \Gamma\);
+4. \(S: Q \times \Gamma \to Q \times \Gamma \times {DE} \);
+5. \(q_0 \in Q\) é o estado inicial;
+6. \(q_{aceita}\) é o estado que aceita a palavra inicial;
+7. \(q_{rejeita}\) é o estado que rejeita a palavra inicial;
+   
+
+Considere as palavras da forma 0000000..., ou seja \(2^n\) zeros para algum \(n \in \mathbb{N}\).
+
+
+![1747866868372](image/Class_Anotations/1747866868372.png)
+
+Seja:
+
+...
