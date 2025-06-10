@@ -1,0 +1,8 @@
+Local/Instituição,Tipo de Sistema,Tecnologia,Resultados,Status
+São Carlos - UFSCar (2021),Monitoramento temperatura vacinas COVID,Termômetro eletrônico + internet,"Monitoramento 24h, alertas em 1 minuto",DESCONTINUADO após pandemia
+Lages - SC,Sistema IoT câmaras frias UBS,Sensores IoT + ThinkSpeak,Verificação a cada 5 minutos,IMPLEMENTADO 2023
+São José do Rio Preto - SP,Monitoramento perdas vacinas,Sistema vigilância epidemiológica,"41,4% perdas por alteração temperatura",ESTUDO REALIZADO
+Petrolina - PE,Monitoramento vacinas UBS,Controle manual + análise perdas,"10.439 doses perdidas, R$ 72.864",ESTUDO REALIZADO 2013
+Hospital Conceição - Porto Alegre,Monitoramento hospitalar,Sistema gestão energética,Consumo 524.675 kWh/mês,ANÁLISE REALIZADA
+HCPA - Porto Alegre,Monitoramento congeladores pesquisa,Arduino + telemetria,"Equivalência medições ±0,22°C",PROTÓTIPO TESTADO
+Hospitais Salvador/Recife,Eficiência energética hospitalar,LED + ar-condicionado + painéis solares,"1.478 MWh/ano economia, 30% redução",PROJETO CONCLUÍDO 2022

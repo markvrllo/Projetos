@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema UBS São Carlos - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header__content">
+            <div class="header__brand">
+                <div class="header__logo">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                    </svg>
+                </div>
+                <h1 class="header__title">Sistema UBS São Carlos</h1>
+            </div>
+            <nav class="header__nav">
+                <a href="#" class="header__nav-link header__nav-link--active">Dashboard</a>
+                <a href="#" class="header__nav-link">Relatórios</a>
+                <a href="#" class="header__nav-link">Configurações</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="app-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <nav class="sidebar__nav">
+                <a href="#" class="sidebar__link sidebar__link--active">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="7" height="7"/>
+                        <rect x="14" y="3" width="7" height="7"/>
+                        <rect x="14" y="14" width="7" height="7"/>
+                        <rect x="3" y="14" width="7" height="7"/>
+                    </svg>
+                    Dashboard
+                </a>
+                <a href="#" class="sidebar__link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                        <circle cx="12" cy="10" r="3"/>
+                    </svg>
+                    UBSs
+                </a>
+                <a href="#" class="sidebar__link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14,2 14,8 20,8"/>
+                        <line x1="16" y1="13" x2="8" y2="13"/>
+                        <line x1="16" y1="17" x2="8" y2="17"/>
+                        <polyline points="10,9 9,9 8,9"/>
+                    </svg>
+                    Relatórios
+                </a>
+                <a href="#" class="sidebar__link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                        <line x1="12" y1="9" x2="12" y2="13"/>
+                        <line x1="12" y1="17" x2="12.01" y2="17"/>
+                    </svg>
+                    Alertas
+                    <span class="sidebar__badge">3</span>
+                </a>
+                <a href="#" class="sidebar__link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="3"/>
+                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1 1.51V6a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V12a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                    </svg>
+                    Configurações
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Summary Cards -->
+            <section class="summary-cards">
+                <div class="card summary-card">
+                    <div class="summary-card__content">
+                        <div class="summary-card__icon summary-card__icon--primary">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                        </div>
+                        <div class="summary-card__data">
+                            <span class="summary-card__value">26</span>
+                            <span class="summary-card__label">Total de UBSs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card summary-card">
+                    <div class="summary-card__content">
+                        <div class="summary-card__icon summary-card__icon--success">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22,4 12,14.01 9,11.01"/>
+                            </svg>
+                        </div>
+                        <div class="summary-card__data">
+                            <span class="summary-card__value">24</span>
+                            <span class="summary-card__label">UBSs Online</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card summary-card">
+                    <div class="summary-card__content">
+                        <div class="summary-card__icon summary-card__icon--warning">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                                <line x1="12" y1="9" x2="12" y2="13"/>
+                                <line x1="12" y1="17" x2="12.01" y2="17"/>
+                            </svg>
+                        </div>
+                        <div class="summary-card__data">
+                            <span class="summary-card__value">3</span>
+                            <span class="summary-card__label">Alertas Ativos</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card summary-card">
+                    <div class="summary-card__content">
+                        <div class="summary-card__icon summary-card__icon--success">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="1" x2="12" y2="23"/>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                            </svg>
+                        </div>
+                        <div class="summary-card__data">
+                            <span class="summary-card__value">R$ 45.200</span>
+                            <span class="summary-card__label">Economia Mensal</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Filters -->
+            <section class="filters">
+                <div class="filters__group">
+                    <label class="form-label">Filtrar por Status:</label>
+                    <select id="statusFilter" class="form-control">
+                        <option value="">Todos</option>
+                        <option value="online">Online</option>
+                        <option value="offline">Offline</option>
+                    </select>
+                </div>
+                <div class="filters__group">
+                    <label class="form-label">Status das Vacinas:</label>
+                    <select id="vacinaFilter" class="form-control">
+                        <option value="">Todos</option>
+                        <option value="OK">OK</option>
+                        <option value="Atenção">Atenção</option>
+                        <option value="Crítico">Crítico</option>
+                    </select>
+                </div>
+                <button id="resetFilters" class="btn btn--secondary">Limpar Filtros</button>
+            </section>
+
+            <!-- Content Grid -->
+            <div class="content-grid">
+                <!-- UBS List -->
+                <section class="ubs-section">
+                    <h2>Unidades Básicas de Saúde</h2>
+                    <div id="ubsList" class="ubs-grid">
+                        <!-- UBS cards will be dynamically inserted here -->
+                    </div>
+                </section>
+
+                <!-- Charts Section -->
+                <section class="charts-section">
+                    <div class="chart-container">
+                        <h3>Consumo Energético por UBS</h3>
+                        <canvas id="energyChart" width="400" height="200"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Temperatura das Geladeiras (Últimas 24h)</h3>
+                        <canvas id="temperatureChart" width="400" height="200"></canvas>
+                    </div>
+                </section>
+
+                <!-- Alerts Section -->
+                <section class="alerts-section">
+                    <h3>Alertas Recentes</h3>
+                    <div id="alertsList" class="alerts-list">
+                        <!-- Alerts will be dynamically inserted here -->
+                    </div>
+                </section>
+            </div>
+
+            <!-- Generated Charts Section -->
+            <section class="insights-section">
+                <h2>Insights e Análises</h2>
+                <div class="insights-grid">
+                    <div class="card">
+                        <div class="card__body">
+                            <h4>Distribuição do Consumo Energético</h4>
+                            <img src="https://pplx-res.cloudinary.com/image/upload/v1749077513/pplx_code_interpreter/ec330967_ctmczf.jpg" alt="Distribuição do consumo energético em UBSs" class="insight-image">
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card__body">
+                            <h4>Projeção de ROI do Sistema</h4>
+                            <img src="https://pplx-res.cloudinary.com/image/upload/v1749077583/pplx_code_interpreter/a19b3dca_cp8nlx.jpg" alt="Projeção de retorno sobre investimento" class="insight-image">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
