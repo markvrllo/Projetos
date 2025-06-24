@@ -483,4 +483,12 @@ Considere as palavras da forma 0000000..., ou seja \(2^n\) zeros para algum \(n 
 
 Seja:
 
-...
+
+
+Exercício:
+
+Escreva a sequência de configurações nas quais essa máquina entra quando iniciada com 10#11;
+
+### Teorema de Ramsey
+
+Dado um grupo com 6 pessoas, existem 3 delas que não se conhecem entre si ou existem 3 delas que todas se conhecem.
